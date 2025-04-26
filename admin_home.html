@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: rgb(190, 43, 43);
+            cursor: pointer;
+        }
+
+        .main-cont {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .main-cont .donate {
+            width: 80%;
+            height: 200px;
+            background-color: var(--c2);
+            color: var(--c1);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            transition: 0.3s ease-in-out;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .main-cont .donate:hover {
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+
+        .main-cont .donate .name {
+            font-size: 700;
+        }
+
+
+        .main-cont .receive {
+            width: 80%;
+            height: 200px;
+            background-color: var(--c2);
+            color: var(--c1);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .main-cont .receive:hover {
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+
+        .main-cont .receive .name {
+            font-size: 700;
+        }
+
+        .main-cont .ambulance {
+            width: 80%;
+            height: 200px;
+            background-color: var(--c2);
+            color: var(--c1);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .main-cont .ambulance:hover {
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+
+        .main-cont .ambulance .name {
+            font-size: 700;
+        }
+
+        .main-cont .profile {
+            width: 80%;
+            height: 200px;
+            background-color: var(--c2);
+            color: var(--c1);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .main-cont .profile:hover {
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        }
+
+        .main-cont .profile .name {
+            font-size: 700;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        @media only screen and (min-width:0px) and (max-width:500px) {
+            .main-cont {
+                width: 90%;
+            }
+        }
+        @media only screen and (min-width:501px) and (max-width:700px) {
+            .main-cont {
+                width: 80%;
+            }
+        }
+
+        .seperate{
+            font-family: "Unica One", sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logout" onclick="window.open('/logout/',target='_self')">
+        logout&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </div>
+
+    <div class="main-cont">
+        <div class="donate" onclick="window.open('/user/blood_bank/',target='_self')">
+            <div class="icon">
+                <i class="fa-solid fa-hand-holding-droplet fa-2xl"></i>
+            </div>
+            <br>
+            <span class="name">Blood Bank</span>
+        </div>
+        <div class="ambulance" onclick="window.open('/user/ambulance/',target='_self')">
+            <div class="icon">
+                <i class="fa-solid fa-phone fa-2xl"></i>
+            </div>
+            <br>
+            <span class="name">Call Ambulance</span>
+        </div>
+
+        <span class="seperate">Additional Features </span>
+     
+        <div class="profile" onclick="window.open('/user/admin/membership_requests/',target='_self')">
+            <div class="icon">
+                <i class="fa-solid fa-user-plus fa-2xl"></i>
+            </div>
+            <br>
+            <span class="name">Membership Requests</span>
+        </div>
+        
+        <div class="profile" onclick="window.open('/user/admin/announce/all/',target='_self')">
+            <div class="icon">
+                <i class="fa-solid fa-bullhorn fa-2xl"></i>
+            </div>
+            <br>
+            <span class="name">Announce</span>
+        </div>
+        <div class="profile" onclick="window.open('/admin/',target='_self')">
+            <div class="icon">
+                <i class="fa-brands fa-python fa-2xl"></i>
+            </div>
+            <br>
+            <span class="name">Admin Dashboard</span>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

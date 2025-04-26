@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Error</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cont {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .cont .title {
+            font-size: 40px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--c1);
+            margin: 10px;
+        }
+
+        .cont .logo {
+            font-size: 50px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--c1);
+            margin: 10px;
+        }
+
+
+        .cont .title .title-low {
+            font-size: 15px;
+            color: black;
+        }
+
+        .cont2 {
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            font-family: "Unica One", sans-serif;
+        }
+
+        .cont2 .btn {
+            background-color: #980146;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            font-size: 12px;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width:800px) {
+            .cont {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .cont .logo {
+                font-size: 70px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <span class="logo">
+            <i class="fa-solid fa-triangle-exclamation fa-shake fa-xl"></i>
+        </span>
+        <span class="cont2">
+            <span class="title">
+                </i> lifeblood.<span class="title-low">error</span>
+            </span>
+            <a href="/user/home/" class="btn">Back To Home Page&nbsp;&nbsp; <i class="fa-solid fa-arrow-right-long fa-lg"></i></a>
+        </span>
+    </div>
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

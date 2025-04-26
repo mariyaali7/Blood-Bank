@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container .title {
+            font-size: 60px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--c1);
+            margin: 10px;
+        }
+
+        .container .title .title-low {
+            font-size: 15px;
+            color: black;
+        }
+
+        .container .msg {
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .container .btn {
+            width: 200px;
+            padding: 10px;
+            background-color: var(--c1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            box-shadow: rgba(152, 1, 70, 0.5) 0px 10px 50px;
+            position: absolute;
+            right: 0;
+            bottom: 50px;
+        }
+
+        .container .btn a {
+            text-decoration: none;
+            color: white;
+        }
+        @media only screen and (min-width:0px) and (max-width:400px){
+            .container{
+                width: 100%;
+            }
+            .container .title {
+            font-size: 50px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: var(--c1);
+            margin: 10px;
+        }
+
+        .container .title .title-low {
+            font-size: 13px;
+            color: black;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="title">lifeblood.<span class="title-low">welcome</span></span>
+        <span class="msg"><i class="fa-solid fa-quote-left fa-sm fa-shake"></i> Welcome to Lifeblood, where every moment
+            nurtures your well-being. <i class="fa-solid fa-quote-right fa-sm fa-shake"></i></span>
+        <span class="btn"><a href="/user/home/">Continue &nbsp;&nbsp;<i
+                    class="fa-regular fa-lg fa-paper-plane fa-bounce"></i></a></span>
+    </div>
+
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

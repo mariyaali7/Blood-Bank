@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Blood Banks</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(235, 235, 235);
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            min-height: 8%;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .back {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        
+
+
+        .locationContainer {
+            width: 600px;
+            height: 100px;
+            background-color: rgb(252, 252, 252);
+            position: fixed;
+            bottom: 0;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .locationContainer .cont {
+            width: 90%;
+            height: 99%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .locationContainer .cont .loc {
+            width: 80%;
+            padding: 5px;
+            border: none;
+            background-color: inherit;
+
+        }
+
+        .locationContainer .cont .icon {
+         
+            width: 20%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            gap: 10px;
+            background-color: var(--c2);
+            padding: 5px;
+            border-radius: 20px;
+            border: none;
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+
+
+
+        @media only screen and (min-width:0px) and (max-width:500px) {
+            
+
+            header .back {
+                margin-left: 10px;
+    
+            }
+
+            .locationContainer .cont .icon {
+
+                width: 30%;
+            }
+
+            .locationContainer .cont .loc {
+                width: 70%;
+            }
+        }
+
+        @media only screen and (min-width:0px) and (max-width:600px) {
+            .locationContainer {
+                width: 100%;
+            }
+
+
+        }
+
+        @media only screen and (min-width:500px) and (max-width:600px) {
+            
+
+            header .back {
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <button onclick="window.open('/user/home/',target='_self')" class="back"><i
+                    class="fa-solid fa-arrow-left fa-lg"></i></button>
+           
+        </header>
+
+
+
+        <div class="locationContainer">
+            <span class="cont">
+                {% comment %} <input type="text" id="locate" class="loc" placeholder="Enter Your State , City"> {% endcomment %}
+                <select class="loc" id="locate" placeholder="Enter Your State , City">
+                    {% for i in data %}
+                    <option value="{{i.0}},{{i.1}}">{{i.0|title}} , {{i.1|title}}</option>
+                    {% endfor %}
+                </select>
+                <button onclick="redirect()" class="icon"><i class="fa-solid fa-location-dot"></i>Locate</button>
+            </span>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+    <script>
+        function redirect() {
+            if (document.getElementById("locate").value) {
+                var lst = document.getElementById("locate").value.split(",")
+                window.open(`/user/blood_bank/${lst[0]}/${lst[1]}/`, target = '_self')
+            }
+
+        }
+    </script>
+</body>
+
+</html>

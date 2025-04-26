@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Donate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main .title {
+            font-size: 50px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-bottom: 20px;
+            color: var(--c1);
+        }
+
+        .main .title .title-low {
+            font-size: 13px;
+            color: black;
+        }
+
+        .main .username {
+            width: 40%;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .main .username .name {
+            padding: 5px;
+            width: 90%;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .main .username .icon {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c1);
+        }
+
+        .main .password {
+            width: 40%;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .main .password .pass {
+            padding: 5px;
+            width: 90%;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .main .password .icon {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c1);
+        }
+
+        .main .msg {
+            font-size: 14px;
+        }
+
+        .main .msg .red {
+            text-decoration: none;
+            color: rgb(190, 43, 43);
+        }
+
+        .main .login {
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--c1);
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            min-height: 10%;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .back {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width:900px) {
+            .main .username {
+                width: 60%;
+            }
+
+            .main .password {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+            .main .username {
+                width: 80%;
+            }
+
+            .main .password {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.open('/user/blood_bank/blood_bank_details/{{id}}/',target='_self')" class="back"><i
+                class="fa-solid fa-arrow-left fa-lg"></i></button>
+        
+    </header>
+    <form class="main" method='POST' action=' '>
+        {% csrf_token %}
+        <span class="title">Request.<span class="title-low">Donate</span></span>
+
+        <span class="username">
+            <input type="number" class="name" name='units' placeholder="Blood Units">
+            <div class="icon">
+                <i class="fa-solid fa-list-ol"></i>
+            </div>
+        </span>
+        <span class="password">
+            <!-- <input type="tel" class="pass" name='mobile' placeholder="Blood Group"> -->
+            <select name="group" class="pass">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            <div class="icon">
+                <i class="fa-solid fa-mobile"></i>
+            </div>
+        </span>
+        <span class="password">
+            <input type="text" class="pass" name='diseases' placeholder="Diseases (if any otherwise leave blank)">
+            <div class="icon">
+                <i class="fa-regular fa-address-book"></i>
+            </div>
+        </span>
+        <span class="password">
+            <!-- <input type="" class="pass" name='address' placeholder="Write a request message"> -->
+            <textarea class="pass" name="message" rows="4" cols="50" placeholder="Write a message"></textarea>
+            <div class="icon">
+                <i class="fa-regular fa-address-book"></i>
+            </div>
+        </span>
+        <button type="submit" class="login" >Send Request &nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
+
+
+    </form>
+
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

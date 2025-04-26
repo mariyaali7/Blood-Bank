@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | Edit</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* position: fixed; */
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            flex-direction: column;
+            gap: 20px;
+            overflow: scroll;
+        }
+
+        .main .title {
+            font-size: 50px;
+            font-family: "Unica One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin-bottom: 20px;
+            color: var(--c1);
+        }
+
+        .main .title .title-low {
+            font-size: 13px;
+            color: black;
+        }
+
+        .main .username {
+            width: 40%;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .main .username .name {
+            padding: 5px;
+            width: 90%;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .main .username .icon {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c1);
+        }
+
+        .main .password {
+            width: 40%;
+            box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .main .password .pass {
+            padding: 5px;
+            width: 90%;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .main .password .icon {
+            width: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c1);
+        }
+
+        .main .msg {
+            font-size: 14px;
+        }
+
+        .main .msg .red {
+            text-decoration: none;
+            color: rgb(190, 43, 43);
+        }
+
+        .main .login {
+            width: 200px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: var(--c1);
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            min-height: 8%;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .back {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        @media only screen and (max-width:900px) {
+            .main .username {
+                width: 60%;
+            }
+
+            .main .password {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+            .main .username {
+                width: 80%;
+            }
+
+            .main .password {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (min-width:0px) and (max-width:500px) {
+
+            header .back {
+                margin-left: 10px;
+
+            }
+        }
+
+        @media only screen and (min-width:500px) and (max-width:600px) {
+
+            header .back {
+                margin-left: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <button onclick="window.open('/user/staff/settings/',target='_self')" class="back"><i
+                class="fa-solid fa-arrow-left fa-lg"></i></button>
+    </header>
+    <form class="main" method='POST' action=" ">
+        {% csrf_token %}
+        <br>
+        <br>
+        <span class="title">BloodBank.<span class="title-low">update</span></span>
+
+        <span class="username">
+            <input type="text" name='bank_name' class="name" placeholder="Blood Bank Name" value="{{data.name}}">
+            <div class="icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="text" name='bank_address' class="name" placeholder="Blood Bank Address" value="{{data.address}}">
+            <div class="icon">
+                <i class="fa-solid fa-map-location"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="text" name='bank_state' class="name" placeholder="Blood Bank State" value="{{data.state}}">
+            <div class="icon">
+                <i class="fa-solid fa-earth-asia"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="text" name='bank_city' class="name" placeholder="Blood Bank City" value="{{data.city}}">
+            <div class="icon">
+                <i class="fa-solid fa-earth-asia"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="tel" name='bank_mobile' class="name" placeholder="Blood Bank Mobile" value="{{data.mobile}}">
+            <div class="icon">
+                <i class="fa-solid fa-mobile"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="tel" name='bank_email' class="name" placeholder="Blood Bank Email" value="{{data.email}}">
+            <div class="icon">
+                <i class="fa-solid fa-at"></i>
+            </div>
+        </span>
+        <span class="username">
+            <select name="bank_category" class="name" placeholder="Category" value="{{data.category}}">
+                <option value="Government">Government</option>
+                <option value="Private">Private</option>
+                <option value="Charity">Charity</option>
+            </select>
+            <div class="icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+        </span>
+        <span class="username">
+            <select name="bank_status" class="name" placeholder="Status" value="{{data.status}}">
+                <option value="Active">Active</option>
+                <option value="Unactive">Unactive</option>
+            </select>
+            <div class="icon">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="tel" name='bank_website' class="name" placeholder="Blood Bank Website" value="{{data.website}}">
+            <div class="icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="text" name='bank_groups' class="name"
+                placeholder="Blood Groups Available (eg - A+,A-,B+,B-,O+,O-,AB+,AB-)" value="{{data.blood_groups|join:", "}}">
+            <div class="icon">
+                <i class="fa-solid fa-hand-holding-droplet"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='A_positive_units' class="name"
+                placeholder="A+ Group Units (If unavailable set 0)" value="{{data.A_positive_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-a"></i><i class="fa-solid fa-plus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='A_negative_units' class="name"
+                placeholder="A- Group Units (If unavailable set 0)" value="{{data.A_negative_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-a"></i><i class="fa-solid fa-minus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='B_positive_units' class="name"
+                placeholder="B+ Group Units (If unavailable set 0)" value="{{data.B_positive_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-b"></i><i class="fa-solid fa-plus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='B_negative_units' class="name"
+                placeholder="B- Group Units (If unavailable set 0)" value="{{data.B_negative_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-b"></i><i class="fa-solid fa-minus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='O_positive_units' class="name"
+                placeholder="O+ Group Units (If unavailable set 0)" value="{{data.O_positive_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-o"></i><i class="fa-solid fa-plus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='O_negative_units' class="name"
+                placeholder="O- Group Units (If unavailable set 0)" value="{{data.O_negative_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-o"></i><i class="fa-solid fa-minus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='AB_positive_units' class="name"
+                placeholder="AB+ Group Units (If unavailable set 0)" value="{{data.AB_positive_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-a"></i><i class="fa-solid fa-b"></i><i class="fa-solid fa-plus fa-xs"></i>
+            </div>
+        </span>
+        <span class="username">
+            <input type="number" name='AB_negative_units' class="name"
+                placeholder="AB- Group Units (If unavailable set 0)" value="{{data.AB_negative_units}}">
+            <div class="icon">
+                <i class="fa-solid fa-a"></i><i class="fa-solid fa-b"></i><i class="fa-solid fa-minus fa-xs"></i>
+            </div>
+        </span>
+
+        <button type="submit" class="login">Update Details &nbsp;&nbsp;<i
+                class="fa-solid fa-right-to-bracket fa-bounce"></i></button>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </form>
+
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

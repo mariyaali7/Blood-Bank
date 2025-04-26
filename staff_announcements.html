@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifeblood | All Announcements</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --c1: #980146;
+            --c2: #edc7d9;
+            --c3: rgb(175, 247, 175);
+            --c4: rgb(247, 175, 175);
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            min-height: 8%;
+            padding: 5px;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .back {
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        main {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        main .listCont {
+            width: 99%;
+            height: 100%;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20px;
+            gap: 30px;
+            overflow: scroll;
+            padding-bottom: 100px;
+        }
+
+        main .listCont .itm {
+            min-width: 70%;
+            min-height: 150px;
+            border-radius: 20px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+        }
+
+        main .listCont .itm .image {
+            width: 25%;
+            height: 80%;
+            background-color: var(--c2);
+            margin-left: 15px;
+            border-radius: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main .listCont .itm .content {
+            width: 75%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        main .listCont .itm .content .name {
+            width: 100%;
+            font-size: 25px;
+            margin-left: 50px;
+
+        }
+
+        main .listCont .itm .content .address {
+            width: 100%;
+            font-size: 12px;
+            margin-left: 50px;
+        }
+
+
+        main .listCont .itm .content .btn-wrap {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+
+        main .listCont .itm .content .btn-wrap .all {
+            width: 80%;
+            align-self: center;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--c1);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        main .listCont .itm .content .btn-wrap .status{
+            width: 10%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            /* border: 1px solid var(--c1); */
+            background-color: var(--c2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* color: var(--c1); */
+            color: black;
+            font-size: 12px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        @media only screen and (max-width:700px) {
+            main {
+                width: 100%;
+            }
+
+            main .listCont .itm {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (min-width:700px) and (max-width:1000px) {
+            main {
+                width: 80%
+            }
+
+            main .listCont .itm {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (min-width:0px) and (max-width:500px) {
+
+
+            header .back {
+                margin-left: 10px;
+            }
+
+            main .listCont .itm .content .btn-wrap {
+                /* flex-direction: column; */
+                gap: 5px;
+                
+            }
+
+            main .listCont .itm .content .btn-wrap .status {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            main .listCont .itm .content .btn-wrap .all {
+                width: 100%;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            main .listCont .itm {
+
+                min-height: 400px;
+                flex-direction: column;
+            }
+
+            main .listCont .itm .image {
+                width: 50%;
+                margin-top: 10px;
+            }
+            main .listCont .itm .content .name {
+                /* width: 100%; */
+                /* font-size: 25px; */
+                margin-left: 0px;
+                text-align: center;
+                overflow-wrap: break-word;
+            }
+    
+            main .listCont .itm .content .address {
+                /* width: 100%; */
+                /* font-size: 12px; */
+                margin-left: 0px;
+                text-align: center;
+            }
+
+        }
+
+        @media only screen and (min-width:0px) and (max-width:600px) {
+            .locationContainer {
+                width: 100%;
+            }
+
+
+        }
+
+        @media only screen and (min-width:500px) and (max-width:600px) {
+            header .back {
+                margin-left: 10px;
+            }
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <button onclick="window.open('/user/home/',target='_self')" class="back"><i
+                    class="fa-solid fa-arrow-left fa-lg"></i></button>
+
+        </header>
+        <main>
+            <ul class="listCont">
+                {% if data %}
+                {% for i in data %}
+                    
+                <li class="itm">
+                    <div class="image">
+                        <i class="fa-solid fa-bullhorn fa-2xl"></i>
+                    </div>
+                    <div class="content">
+                        <span class="name">{{i.title|title}}</span>
+                        <div class="btn-wrap">
+                            <span class="all" onclick="window.open('/user/admin/announce/all/{{i.id}}/',target='_self')">
+                                <i class="fa-regular fa-eye"></i>
+                                &nbsp;&nbsp; Read
+                            </span>     
+                        </div>
+                    </div>
+                </li>
+                
+                {% endfor %}
+                {% else %}
+                <div class='else'>
+                    <br>
+                    <br>
+                    <br>
+                    <i class="fa-regular fa-face-sad-cry fa-xl"></i>&nbsp; &nbsp; No Announcements
+                </div>
+                {% endif %}
+            </ul>
+            <div style="height: 200px; width: 100%;"></div>
+        </main>
+
+        
+    </div>
+    <script src="https://kit.fontawesome.com/55b646fe91.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
